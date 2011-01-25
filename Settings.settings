@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Koffeinfrei.Zueribad" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DataFile" Type="System.String" Scope="User">
+    <Setting Name="DataFile" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://www.stadt-zuerich.ch/stzh/bathdatadownload</Value>
     </Setting>
   </Settings>

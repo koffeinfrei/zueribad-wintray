@@ -19,7 +19,9 @@ namespace Koffeinfrei.Zueribad
     public class Bath
     {
         public string Title { get; set; }
-
         public string TemperatureWater { get; set; }
+        public string Modified { get; set; }
+        public string Status { get; set; }
+        public string Url { get; set; }
     }
 }

@@ -60,10 +60,42 @@ namespace Koffeinfrei.Zueribad.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap homepage {
+            get {
+                object obj = ResourceManager.GetObject("homepage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest update.
+        /// </summary>
+        internal static string LabelModified {
+            get {
+                return ResourceManager.GetString("LabelModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Water temperature.
+        /// </summary>
+        internal static string LabelWaterTemperatur {
+            get {
+                return ResourceManager.GetString("LabelWaterTemperatur", resourceCulture);
             }
         }
     }

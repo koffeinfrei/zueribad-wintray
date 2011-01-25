@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Koffeinfrei.Zueribad.Properties;
 
 namespace Koffeinfrei.Zueribad
 {
@@ -54,8 +55,13 @@ namespace Koffeinfrei.Zueribad
             UpdateCurrentBath();
 
             SetWindowPosition();
+            WindowState = FormWindowState.Minimized;
             Visible = false;
             Hide();
+            TopMost = true;
+
+            Localize();
+            SetTransparentBackground();
         }
 
         /// <summary>
@@ -83,7 +89,16 @@ namespace Koffeinfrei.Zueribad
         {
             if (e == null || e.Button == MouseButtons.Left)
             {
-                // TODO open main window
+                if (FormWindowState.Minimized == WindowState)
+                {
+                    Show();
+                    WindowState = FormWindowState.Normal;
+                }
+                else if (FormWindowState.Normal == WindowState)
+                {
+                    Hide();
+                    WindowState = FormWindowState.Minimized;
+                }
             }
         }
 
@@ -119,6 +134,11 @@ namespace Koffeinfrei.Zueribad
         {
             Settings.Default.Save();
             tray.Dispose();
+        }
+
+        private void linkHomepage_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(baths[currentBathIndex].Url);
         }
 
         /// <summary>
@@ -157,6 +177,43 @@ namespace Koffeinfrei.Zueribad
 
             TrayIcon icon = new TrayIcon(tray, fontDialog.Font, Color.WhiteSmoke, Color.Transparent);
             icon.Set(baths[currentBathIndex].TemperatureWater);
+
+            // data in main window
+            textTitle.Text = baths[currentBathIndex].Title;
+            textTemperature.Text = baths[currentBathIndex].TemperatureWater + " °C";
+            textStatus.Text = baths[currentBathIndex].Status;
+            textModified.Text = baths[currentBathIndex].Modified;
+        }
+
+        private void SetTransparentBackground()
+        {
+            textTitle.Parent = pictureHeader;
+            textTitle.BackColor = Color.Transparent;
+
+            labelTemperature.Parent = pictureHeader;
+            labelTemperature.BackColor = Color.Transparent;
+
+            textTemperature.Parent = pictureHeader;
+            textTemperature.BackColor = Color.Transparent;
+
+            linkHomepage.Parent = pictureHeader;
+            linkHomepage.BackColor = Color.Transparent;
+            linkHomepage.ForeColor = Color.Transparent;
+
+            textStatus.Parent = pictureHeader;
+            textStatus.BackColor = Color.Transparent;
+
+            labelModified.Parent = pictureHeader;
+            labelModified.BackColor = Color.Transparent;
+
+            textModified.Parent = pictureHeader;
+            textModified.BackColor = Color.Transparent;
+        }
+
+        private void Localize()
+        {
+            labelTemperature.Text = Resources.LabelWaterTemperatur;
+            labelModified.Text = Resources.LabelModified;
         }
     }
 }

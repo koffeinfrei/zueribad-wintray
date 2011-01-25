@@ -23,15 +23,12 @@ namespace Koffeinfrei.Zueribad {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://www.stadt-zuerich.ch/stzh/bathdatadownload")]
         public string DataFile {
             get {
                 return ((string)(this["DataFile"]));
-            }
-            set {
-                this["DataFile"] = value;
             }
         }
     }

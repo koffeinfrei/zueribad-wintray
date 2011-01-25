@@ -51,7 +51,10 @@ namespace Koffeinfrei.Zueribad
                          select new Bath
                          {
                              TemperatureWater = bathElements.Element("temperatureWater").Value.Trim(),
-                             Title = bathElements.Element("title").Value.Trim()
+                             Title = bathElements.Element("title").Value.Trim(),
+                             Modified = bathElements.Element("dateModified").Value.Trim(),
+                             Status = bathElements.Element("openClosedTextPlain").Value.Trim(),
+                             Url = bathElements.Element("urlPage").Value.Trim()
                          }
                         ).ToList();
             }
