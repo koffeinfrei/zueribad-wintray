@@ -16,8 +16,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using Koffeinfrei.Zueribad.Properties;
@@ -32,15 +33,17 @@ namespace Koffeinfrei.Zueribad
         private readonly DataService dataService;
         private List<Bath> baths;
         private int currentBathIndex;
+        private readonly TrayIcon trayIcon;
 
         /// <summary>
         ///   Initializes a new instance of the <see cref = "MainForm" /> class.
         /// </summary>
         public MainForm()
         {
-            dataService = new DataService(Settings.Default.DataFile);
-
             InitializeComponent();
+
+            dataService = new DataService(Settings.Default.DataFile);
+            trayIcon = new TrayIcon(tray, new FontDialog().Font, Color.WhiteSmoke, Color.Transparent);
         }
 
         /// <summary>
@@ -50,10 +53,9 @@ namespace Koffeinfrei.Zueribad
         /// <param name = "e">The <see cref = "System.EventArgs" /> instance containing the event data.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            baths = dataService.Load();
+            trayIcon.SetAnimated(Resources.loading2, Resources.loading1);
 
-            InitBaths();
-            UpdateCurrentBath();
+            dataWorker.RunWorkerAsync();
 
             SetWindowPosition();
             WindowState = FormWindowState.Minimized;
@@ -139,11 +141,11 @@ namespace Koffeinfrei.Zueribad
 
         private void linkHomepage_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(baths[currentBathIndex].Url);
+            Process.Start(baths[currentBathIndex].Url);
         }
 
         /// <summary>
-        /// Populates the available baths into the context menu
+        ///   Populates the available baths into the context menu
         /// </summary>
         private void InitBaths()
         {
@@ -161,23 +163,20 @@ namespace Koffeinfrei.Zueribad
         }
 
         /// <summary>
-        /// Updates the current bath. i.e. updates the check mark in the menu,
-        /// the info in the main window and the tray icon.
+        ///   Updates the current bath. i.e. updates the check mark in the menu,
+        ///   the info in the main window and the tray icon.
         /// </summary>
         private void UpdateCurrentBath()
         {
             // menu: uncheck all others, check the current
             foreach (var item in menuItemBaths.DropDownItems)
             {
-                ((ToolStripMenuItem)item).Checked = false;
+                ((ToolStripMenuItem) item).Checked = false;
             }
-            ((ToolStripMenuItem)menuItemBaths.DropDownItems[currentBathIndex]).Checked = true;
+            ((ToolStripMenuItem) menuItemBaths.DropDownItems[currentBathIndex]).Checked = true;
 
             // icon
-            FontDialog fontDialog = new FontDialog();
-
-            TrayIcon icon = new TrayIcon(tray, fontDialog.Font, Color.WhiteSmoke, Color.Transparent);
-            icon.Set(baths[currentBathIndex].TemperatureWater);
+            trayIcon.SetStatic(baths[currentBathIndex].TemperatureWater);
 
             // data in main window
             textTitle.Text = baths[currentBathIndex].Title;
@@ -218,6 +217,17 @@ namespace Koffeinfrei.Zueribad
 
             menuItemBaths.Text = Resources.MenuBaths;
             menuItemQuit.Text = Resources.MenuQuit;
+        }
+
+        private void dataWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            baths = dataService.Load();
+        }
+
+        private void dataWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            InitBaths();
+            UpdateCurrentBath();
         }
     }
 }

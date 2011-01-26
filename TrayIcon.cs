@@ -15,6 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
@@ -27,6 +28,10 @@ namespace Koffeinfrei.Zueribad
     /// </summary>
     public class TrayIcon
     {
+        public Font Font { get; set; }
+        public Color FontColor { get; set; }
+        public Color BackgroundColor { get; set; }
+
         [DllImport("user32.dll", EntryPoint = "DestroyIcon")]
         private static extern bool DestroyIcon(IntPtr hIcon);
 
@@ -35,9 +40,9 @@ namespace Koffeinfrei.Zueribad
 
         private readonly NotifyIcon icon;
 
-        public Font Font { get; set; }
-        public Color FontColor { get; set; }
-        public Color BackgroundColor { get; set; }
+        private List<Bitmap> animatedPictures;
+        private int currentAnimatedPicture;
+        private Timer animatedTimer;
 
         // TODO don't pass the notifyicon ref, make callback or something
         public TrayIcon(NotifyIcon icon, Font font, Color fontColor, Color backgroundColor)
@@ -48,8 +53,10 @@ namespace Koffeinfrei.Zueribad
             BackgroundColor = backgroundColor;
         }
 
-        public void Set(string text)
+        public void SetStatic(string text)
         {
+            StopTimer();
+
             string temperature = string.IsNullOrEmpty(text) ? "-" : text;
 
             StringFormat stringFormat = new StringFormat
@@ -75,9 +82,47 @@ namespace Koffeinfrei.Zueribad
                 hIcon = bitmap.GetHicon();
             }
             icon.Icon = Icon.FromHandle(hIcon);
-            
+
             // manually destroy the unmanaged handle created by GetHicon
             DestroyIcon(hIcon);
+        }
+
+        public void SetAnimated(params Bitmap[] fileNames)
+        {
+            StopTimer();
+
+            if (fileNames != null)
+            {
+                animatedPictures = new List<Bitmap>(fileNames);
+
+                animatedTimer = new Timer {Interval = 300};
+                animatedTimer.Tick += timer_Tick;
+                animatedTimer.Start();
+            }
+        }
+
+        private void StopTimer()
+        {
+            if (animatedTimer != null && animatedTimer.Enabled)
+            {
+                animatedTimer.Stop();
+                animatedTimer.Dispose();
+            }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            IntPtr hIcon = animatedPictures[currentAnimatedPicture].GetHicon();
+            icon.Icon = Icon.FromHandle(hIcon);
+
+            // manually destroy the unmanaged handle created by GetHicon
+            DestroyIcon(hIcon);
+
+            ++currentAnimatedPicture;
+            if (currentAnimatedPicture >= animatedPictures.Count)
+            {
+                currentAnimatedPicture = 0;
+            }
         }
     }
 }

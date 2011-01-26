@@ -12,7 +12,7 @@
     <AssemblyName>Koffeinfrei.Zueribad</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -115,9 +115,11 @@
     <Compile Include="TrayIcon.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
+    <Content Include="Resources\icon.ico" />
     <Content Include="Resources\homepage.png" />
     <Content Include="Resources\background.jpg" />
+    <Content Include="Resources\loading1.png" />
+    <Content Include="Resources\loading2.png" />
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>

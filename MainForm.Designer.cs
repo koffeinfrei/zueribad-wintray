@@ -40,6 +40,7 @@
             this.textModified = new System.Windows.Forms.Label();
             this.labelModified = new System.Windows.Forms.Label();
             this.linkHomepage = new System.Windows.Forms.Label();
+            this.dataWorker = new System.ComponentModel.BackgroundWorker();
             this.trayMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHeader)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +174,11 @@
             this.linkHomepage.TabIndex = 10;
             this.linkHomepage.Click += new System.EventHandler(this.linkHomepage_Click);
             // 
+            // dataWorker
+            // 
+            this.dataWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.dataWorker_DoWork);
+            this.dataWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.dataWorker_RunWorkerCompleted);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +222,7 @@
         private System.Windows.Forms.Label textModified;
         private System.Windows.Forms.Label labelModified;
         private System.Windows.Forms.Label linkHomepage;
+        private System.ComponentModel.BackgroundWorker dataWorker;
     }
 }
 
