@@ -98,5 +98,23 @@ namespace Koffeinfrei.Zueribad.Properties {
                 return ResourceManager.GetString("LabelWaterTemperatur", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Baths.
+        /// </summary>
+        internal static string MenuBaths {
+            get {
+                return ResourceManager.GetString("MenuBaths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string MenuQuit {
+            get {
+                return ResourceManager.GetString("MenuQuit", resourceCulture);
+            }
+        }
     }
 }

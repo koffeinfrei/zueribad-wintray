@@ -17,6 +17,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using Koffeinfrei.Zueribad.Properties;
@@ -214,6 +215,9 @@ namespace Koffeinfrei.Zueribad
         {
             labelTemperature.Text = Resources.LabelWaterTemperatur;
             labelModified.Text = Resources.LabelModified;
+
+            menuItemBaths.Text = Resources.MenuBaths;
+            menuItemQuit.Text = Resources.MenuQuit;
         }
     }
 }

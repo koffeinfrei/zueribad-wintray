@@ -58,17 +58,24 @@ namespace Koffeinfrei.Zueribad
                 LineAlignment = StringAlignment.Center
             };
 
-            Bitmap bitmap = new Bitmap(Width, Height);
-            SolidBrush brush = new SolidBrush(FontColor);
-            Graphics graphics = Graphics.FromImage(bitmap);
-            graphics.FillRectangle(new SolidBrush(BackgroundColor), 0, 0, Width, Height);
-            graphics.TextContrast = 0; // high contrast (0-12)
-            graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-            graphics.DrawString(temperature, Font, brush, Width/2, Height/2, stringFormat);
+            IntPtr hIcon;
+            using (Bitmap bitmap = new Bitmap(Width, Height))
+            {
+                using (SolidBrush brush = new SolidBrush(FontColor))
+                {
+                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    {
+                        graphics.FillRectangle(new SolidBrush(BackgroundColor), 0, 0, Width, Height);
+                        graphics.TextContrast = 0; // high contrast (0-12)
+                        graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                        graphics.DrawString(temperature, Font, brush, Width/2, Height/2, stringFormat);
+                    }
+                }
 
-            IntPtr hIcon = bitmap.GetHicon();
+                hIcon = bitmap.GetHicon();
+            }
             icon.Icon = Icon.FromHandle(hIcon);
-
+            
             // manually destroy the unmanaged handle created by GetHicon
             DestroyIcon(hIcon);
         }
