@@ -53,9 +53,7 @@ namespace Koffeinfrei.Zueribad
         /// <param name = "e">The <see cref = "System.EventArgs" /> instance containing the event data.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            trayIcon.SetAnimated(Resources.loading2, Resources.loading1);
-
-            dataWorker.RunWorkerAsync();
+            UpdateBathData();
 
             SetWindowPosition();
             WindowState = FormWindowState.Minimized;
@@ -144,10 +142,38 @@ namespace Koffeinfrei.Zueribad
             Process.Start(baths[currentBathIndex].Url);
         }
 
+        private void dataWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            baths = dataService.Load();
+        }
+
+        private void dataWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            PopulateBaths();
+            UpdateCurrentBath();
+        }
+
+        private void dataUpdateTimer_Tick(object sender, EventArgs e)
+        {
+            UpdateBathData();
+        }
+
+        /// <summary>
+        ///   Updates the bath data, fetches the data from the web service asynchronously.
+        /// </summary>
+        private void UpdateBathData()
+        {
+            if (!dataWorker.IsBusy)
+            {
+                trayIcon.SetAnimated(Resources.loading2, Resources.loading1);
+                dataWorker.RunWorkerAsync();
+            }
+        }
+
         /// <summary>
         ///   Populates the available baths into the context menu
         /// </summary>
-        private void InitBaths()
+        private void PopulateBaths()
         {
             foreach (Bath bath in baths)
             {
@@ -217,17 +243,6 @@ namespace Koffeinfrei.Zueribad
 
             menuItemBaths.Text = Resources.MenuBaths;
             menuItemQuit.Text = Resources.MenuQuit;
-        }
-
-        private void dataWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            baths = dataService.Load();
-        }
-
-        private void dataWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            InitBaths();
-            UpdateCurrentBath();
         }
     }
 }

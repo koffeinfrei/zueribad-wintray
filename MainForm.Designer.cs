@@ -41,6 +41,7 @@
             this.labelModified = new System.Windows.Forms.Label();
             this.linkHomepage = new System.Windows.Forms.Label();
             this.dataWorker = new System.ComponentModel.BackgroundWorker();
+            this.dataUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.trayMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHeader)).BeginInit();
             this.SuspendLayout();
@@ -179,6 +180,12 @@
             this.dataWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.dataWorker_DoWork);
             this.dataWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.dataWorker_RunWorkerCompleted);
             // 
+            // dataUpdateTimer
+            // 
+            this.dataUpdateTimer.Enabled = true;
+            this.dataUpdateTimer.Interval = 3600000;
+            this.dataUpdateTimer.Tick += new System.EventHandler(this.dataUpdateTimer_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +230,7 @@
         private System.Windows.Forms.Label labelModified;
         private System.Windows.Forms.Label linkHomepage;
         private System.ComponentModel.BackgroundWorker dataWorker;
+        private System.Windows.Forms.Timer dataUpdateTimer;
     }
 }
 
