@@ -23,7 +23,7 @@ using System.Reflection;
 using System.Resources;
 using System.Windows.Forms;
 
-namespace Koffeinfrei.Zueribad
+namespace Koffeinfrei.Zueribad.Core
 {
     /// <summary>
     /// </summary>

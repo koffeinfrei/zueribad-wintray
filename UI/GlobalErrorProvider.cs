@@ -17,7 +17,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Koffeinfrei.Zueribad
+namespace Koffeinfrei.Zueribad.UI
 {
     /// <summary>
     /// Enhances the <see cref="ErrorProvider"/> with the ability to

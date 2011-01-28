@@ -23,7 +23,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Koffeinfrei.Zueribad
+namespace Koffeinfrei.Zueribad.UI
 {
     /// <summary>
     /// This is the base class for all windows that stick to the windows task bar.

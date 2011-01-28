@@ -21,7 +21,7 @@ using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Koffeinfrei.Zueribad
+namespace Koffeinfrei.Zueribad.UI
 {
     /// <summary>
     ///   Description of TrayIcon.

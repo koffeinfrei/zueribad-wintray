@@ -16,7 +16,7 @@
 
 using System.Drawing;
 
-namespace Koffeinfrei.Zueribad.Model
+namespace Koffeinfrei.Zueribad.Core
 {
     public static class ColorExtensions
     {

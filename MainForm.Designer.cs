@@ -194,7 +194,7 @@
             // dataUpdateTimer
             // 
             this.dataUpdateTimer.Enabled = true;
-            this.dataUpdateTimer.Interval = global::Koffeinfrei.Zueribad.Settings.Default.DataUpdateInterval;
+            this.dataUpdateTimer.Interval = global::Koffeinfrei.Zueribad.Properties.Settings.Default.DataUpdateInterval;
             this.dataUpdateTimer.Tick += new System.EventHandler(this.dataUpdateTimer_Tick);
             // 
             // MainForm

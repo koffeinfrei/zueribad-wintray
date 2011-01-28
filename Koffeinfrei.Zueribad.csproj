@@ -65,13 +65,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bath.cs" />
-    <Compile Include="CultureInfoExtensions.cs" />
-    <Compile Include="DataService.cs" />
+    <Compile Include="Model\Bath.cs" />
+    <Compile Include="Core\CultureInfoExtensions.cs" />
+    <Compile Include="Model\DataService.cs" />
     <Compile Include="DockableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlobalErrorProvider.cs">
+    <Compile Include="UI\GlobalErrorProvider.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GradientForm.cs">
@@ -86,8 +86,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ColorExtensions.cs" />
-    <Compile Include="Model\IntegerExtensions.cs" />
+    <Compile Include="Core\ColorExtensions.cs" />
+    <Compile Include="Core\IntegerExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GradientForm.resx">
@@ -113,11 +113,11 @@
       <DependentUpon>SettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Settings.settings">
+    <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -128,7 +128,7 @@
     <Compile Include="SettingsDialog.Designer.cs">
       <DependentUpon>SettingsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrayIcon.cs" />
+    <Compile Include="UI\TrayIcon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\baths.png" />

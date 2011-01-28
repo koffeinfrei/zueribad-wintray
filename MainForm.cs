@@ -22,7 +22,9 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using Koffeinfrei.Zueribad.Model;
 using Koffeinfrei.Zueribad.Properties;
+using Koffeinfrei.Zueribad.UI;
 
 namespace Koffeinfrei.Zueribad
 {

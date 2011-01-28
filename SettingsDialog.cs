@@ -22,8 +22,10 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Koffeinfrei.Zueribad.Core;
 using Koffeinfrei.Zueribad.Model;
 using Koffeinfrei.Zueribad.Properties;
+using Koffeinfrei.Zueribad.UI;
 
 namespace Koffeinfrei.Zueribad
 {

@@ -14,14 +14,17 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace Koffeinfrei.Zueribad
+using System.Globalization;
+
+namespace Koffeinfrei.Zueribad.Core
 {
-    public class Bath
+    public class IntegerExtensions
     {
-        public string Title { get; set; }
-        public string TemperatureWater { get; set; }
-        public string Modified { get; set; }
-        public string Status { get; set; }
-        public string Url { get; set; }
+        public static int FromHex(string hexCode)
+        {
+            int result;
+            int.TryParse(hexCode, NumberStyles.HexNumber, null, out result);
+            return result;
+        }
     }
 }
