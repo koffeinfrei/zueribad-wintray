@@ -66,9 +66,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bath.cs" />
+    <Compile Include="CultureInfoExtensions.cs" />
     <Compile Include="DataService.cs" />
     <Compile Include="DockableForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalErrorProvider.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="GradientForm.cs">
       <SubType>Form</SubType>
@@ -82,6 +86,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ColorExtensions.cs" />
+    <Compile Include="Model\IntegerExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GradientForm.resx">
@@ -103,6 +109,10 @@
     <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingsDialog.resx">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,14 +122,24 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrayIcon.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\baths.png" />
+    <Content Include="Resources\error.ico" />
     <Content Include="Resources\icon.ico" />
     <Content Include="Resources\homepage.png" />
     <Content Include="Resources\background.jpg" />
+    <Content Include="Resources\choosecolor.png" />
     <Content Include="Resources\loading1.png" />
     <Content Include="Resources\loading2.png" />
+    <Content Include="Resources\settings.png" />
     <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>

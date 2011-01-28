@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using Koffeinfrei.Zueribad.Properties;
@@ -43,7 +44,28 @@ namespace Koffeinfrei.Zueribad
             InitializeComponent();
 
             dataService = new DataService(Settings.Default.DataFile);
-            trayIcon = new TrayIcon(tray, new FontDialog().Font, Color.WhiteSmoke, Color.Transparent);
+
+            trayIcon = new TrayIcon( tray, new FontDialog().Font, Color.Empty, Color.Empty);
+        }
+
+        private void LoadSettings()
+        {
+            trayIcon.FontColor = Color.FromArgb(Settings.Default.FontColor);
+            trayIcon.BackgroundColor = Color.FromArgb(Settings.Default.BackgroundColor);
+            if (Settings.Default.Language > 0)
+            {
+                Resources.Culture = new CultureInfo(Settings.Default.Language);
+            }
+        }
+
+        private void LoadBathSettings()
+        {
+            if (baths != null && baths.Count > 0)
+            {
+                currentBathIndex = Math.Max(0, baths.FindIndex(x => x.Title == Settings.Default.FavoriteBath));
+
+                UpdateCurrentBath();
+            }
         }
 
         /// <summary>
@@ -61,6 +83,7 @@ namespace Koffeinfrei.Zueribad
             Hide();
             TopMost = true;
 
+            LoadSettings();
             Localize();
             SetTransparentBackground();
         }
@@ -150,7 +173,8 @@ namespace Koffeinfrei.Zueribad
         private void dataWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             PopulateBaths();
-            UpdateCurrentBath();
+            LoadBathSettings();
+            //UpdateCurrentBath();
         }
 
         private void dataUpdateTimer_Tick(object sender, EventArgs e)
@@ -243,6 +267,18 @@ namespace Koffeinfrei.Zueribad
 
             menuItemBaths.Text = Resources.MenuBaths;
             menuItemQuit.Text = Resources.MenuQuit;
+            menuItemSettings.Text = Resources.MenuSettings;
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsDialog settingsDialog = new SettingsDialog(baths);
+            if (settingsDialog.ShowDialog() == DialogResult.OK)
+            {
+                LoadSettings();
+                Localize();
+                UpdateCurrentBath();
+            }
         }
     }
 }

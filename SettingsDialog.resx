@@ -117,55 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonCancel" xml:space="preserve">
-    <value>Abbrechen</value>
-  </data>
-  <data name="ButtonReset" xml:space="preserve">
-    <value>Standard verwenden</value>
-  </data>
-  <data name="ButtonSave" xml:space="preserve">
-    <value>Speichern</value>
-  </data>
-  <data name="ErrorAlpha" xml:space="preserve">
-    <value>Alpha-Wert muss zwischen 0.0 und 1.0 sein</value>
-  </data>
-  <data name="ErrorHexCode" xml:space="preserve">
-    <value>Farbcode darf nur Hex-Werte enthalten ([0-9a-f])</value>
-  </data>
-  <data name="ErrorNumber" xml:space="preserve">
-    <value>Wert muss eine gültige Zahl sein</value>
-  </data>
-  <data name="LabelMinutesAbbreviation" xml:space="preserve">
-    <value>min.</value>
-  </data>
-  <data name="LabelModified" xml:space="preserve">
-    <value>Letzte Änderung</value>
-  </data>
-  <data name="LabelSettingsBackColor" xml:space="preserve">
-    <value>Hintergrundfarbe</value>
-  </data>
-  <data name="LabelSettingsFavoriteBath" xml:space="preserve">
-    <value>Lieblingsbad</value>
-  </data>
-  <data name="LabelSettingsFontColor" xml:space="preserve">
-    <value>Schriftfarbe</value>
-  </data>
-  <data name="LabelSettingsLanguage" xml:space="preserve">
-    <value>Sprache</value>
-  </data>
-  <data name="LabelSettingsUpdateInterval" xml:space="preserve">
-    <value>Aktualisierungsintervall</value>
-  </data>
-  <data name="LabelWaterTemperatur" xml:space="preserve">
-    <value>Wassertemperatur</value>
-  </data>
-  <data name="MenuBaths" xml:space="preserve">
-    <value>Bäder</value>
-  </data>
-  <data name="MenuQuit" xml:space="preserve">
-    <value>Beenden</value>
-  </data>
-  <data name="MenuSettings" xml:space="preserve">
-    <value>Einstellungen</value>
-  </data>
+  <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

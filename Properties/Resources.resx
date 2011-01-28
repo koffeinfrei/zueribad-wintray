@@ -139,11 +139,61 @@
   <data name="MenuQuit" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="loading1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\loading1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\loading2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baths" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\baths.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="choosecolor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\choosecolor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ButtonSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="LabelSettingsBackColor" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="LabelSettingsFontColor" xml:space="preserve">
+    <value>Font color</value>
+  </data>
+  <data name="LabelSettingsUpdateInterval" xml:space="preserve">
+    <value>Update interval</value>
+  </data>
+  <data name="LabelMinutesAbbreviation" xml:space="preserve">
+    <value>min.</value>
+  </data>
+  <data name="LabelSettingsFavoriteBath" xml:space="preserve">
+    <value>Favorite bath</value>
+  </data>
+  <data name="ButtonReset" xml:space="preserve">
+    <value>Reset to defaults</value>
+  </data>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\error.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorAlpha" xml:space="preserve">
+    <value>Alpha value must be between 0.0 and 1.0</value>
+  </data>
+  <data name="ErrorHexCode" xml:space="preserve">
+    <value>Color code may only contain hex values ([0-9a-f])</value>
+  </data>
+  <data name="ErrorNumber" xml:space="preserve">
+    <value>Value must be a valid number</value>
+  </data>
+  <data name="LabelSettingsLanguage" xml:space="preserve">
+    <value>Language</value>
   </data>
 </root>

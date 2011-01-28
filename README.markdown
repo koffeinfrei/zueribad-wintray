@@ -20,4 +20,4 @@ Source code: [http://github.com/koffeinfrei/zueribad-wintray](http://github.com/
 
 Data provider: [Schul- und Sportdepartement, Stadt Zürich](http://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen.html)
 
-Iconset: [Devine Icons by iPapun] (http://ipapun.deviantart.com/art/Devine-Icons-137555756)
+Iconset: [Devine Icons by iPapun](http://ipapun.deviantart.com/art/Devine-Icons-137555756)

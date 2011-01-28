@@ -31,6 +31,7 @@
             this.tray = new System.Windows.Forms.NotifyIcon(this.components);
             this.trayMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuItemBaths = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.textTitle = new System.Windows.Forms.Label();
             this.labelTemperature = new System.Windows.Forms.Label();
@@ -57,21 +58,31 @@
             // 
             this.trayMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemBaths,
+            this.menuItemSettings,
             this.menuItemQuit});
             this.trayMenu.Name = "trayMenu";
-            this.trayMenu.Size = new System.Drawing.Size(104, 48);
+            this.trayMenu.Size = new System.Drawing.Size(117, 70);
             // 
             // menuItemBaths
             // 
+            this.menuItemBaths.Image = global::Koffeinfrei.Zueribad.Properties.Resources.baths;
             this.menuItemBaths.Name = "menuItemBaths";
-            this.menuItemBaths.Size = new System.Drawing.Size(103, 22);
+            this.menuItemBaths.Size = new System.Drawing.Size(116, 22);
             this.menuItemBaths.Text = "Baths";
+            // 
+            // menuItemSettings
+            // 
+            this.menuItemSettings.Image = global::Koffeinfrei.Zueribad.Properties.Resources.settings;
+            this.menuItemSettings.Name = "menuItemSettings";
+            this.menuItemSettings.Size = new System.Drawing.Size(116, 22);
+            this.menuItemSettings.Text = "Settings";
+            this.menuItemSettings.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // menuItemQuit
             // 
             this.menuItemQuit.Image = global::Koffeinfrei.Zueribad.Properties.Resources.exit;
             this.menuItemQuit.Name = "menuItemQuit";
-            this.menuItemQuit.Size = new System.Drawing.Size(103, 22);
+            this.menuItemQuit.Size = new System.Drawing.Size(116, 22);
             this.menuItemQuit.Text = "Exit";
             this.menuItemQuit.Click += new System.EventHandler(this.menuItemQuit_Click);
             // 
@@ -183,7 +194,7 @@
             // dataUpdateTimer
             // 
             this.dataUpdateTimer.Enabled = true;
-            this.dataUpdateTimer.Interval = 3600000;
+            this.dataUpdateTimer.Interval = global::Koffeinfrei.Zueribad.Settings.Default.DataUpdateInterval;
             this.dataUpdateTimer.Tick += new System.EventHandler(this.dataUpdateTimer_Tick);
             // 
             // MainForm
@@ -231,6 +242,7 @@
         private System.Windows.Forms.Label linkHomepage;
         private System.ComponentModel.BackgroundWorker dataWorker;
         private System.Windows.Forms.Timer dataUpdateTimer;
+        private System.Windows.Forms.ToolStripMenuItem menuItemSettings;
     }
 }
 

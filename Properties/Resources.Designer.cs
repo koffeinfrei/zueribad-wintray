@@ -67,6 +67,81 @@ namespace Koffeinfrei.Zueribad.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap baths {
+            get {
+                object obj = ResourceManager.GetObject("baths", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string ButtonCancel {
+            get {
+                return ResourceManager.GetString("ButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset to defaults.
+        /// </summary>
+        internal static string ButtonReset {
+            get {
+                return ResourceManager.GetString("ButtonReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string ButtonSave {
+            get {
+                return ResourceManager.GetString("ButtonSave", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap choosecolor {
+            get {
+                object obj = ResourceManager.GetObject("choosecolor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon error {
+            get {
+                object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alpha value must be between 0.0 and 1.0.
+        /// </summary>
+        internal static string ErrorAlpha {
+            get {
+                return ResourceManager.GetString("ErrorAlpha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color code may only contain hex values ([0-9a-f]).
+        /// </summary>
+        internal static string ErrorHexCode {
+            get {
+                return ResourceManager.GetString("ErrorHexCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value must be a valid number.
+        /// </summary>
+        internal static string ErrorNumber {
+            get {
+                return ResourceManager.GetString("ErrorNumber", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
@@ -82,11 +157,65 @@ namespace Koffeinfrei.Zueribad.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to min..
+        /// </summary>
+        internal static string LabelMinutesAbbreviation {
+            get {
+                return ResourceManager.GetString("LabelMinutesAbbreviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Latest update.
         /// </summary>
         internal static string LabelModified {
             get {
                 return ResourceManager.GetString("LabelModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background color.
+        /// </summary>
+        internal static string LabelSettingsBackColor {
+            get {
+                return ResourceManager.GetString("LabelSettingsBackColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Favorite bath.
+        /// </summary>
+        internal static string LabelSettingsFavoriteBath {
+            get {
+                return ResourceManager.GetString("LabelSettingsFavoriteBath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font color.
+        /// </summary>
+        internal static string LabelSettingsFontColor {
+            get {
+                return ResourceManager.GetString("LabelSettingsFontColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string LabelSettingsLanguage {
+            get {
+                return ResourceManager.GetString("LabelSettingsLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update interval.
+        /// </summary>
+        internal static string LabelSettingsUpdateInterval {
+            get {
+                return ResourceManager.GetString("LabelSettingsUpdateInterval", resourceCulture);
             }
         }
         
@@ -128,6 +257,22 @@ namespace Koffeinfrei.Zueribad.Properties {
         internal static string MenuQuit {
             get {
                 return ResourceManager.GetString("MenuQuit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string MenuSettings {
+            get {
+                return ResourceManager.GetString("MenuSettings", resourceCulture);
+            }
+        }
+        
+        internal static System.Drawing.Bitmap settings {
+            get {
+                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

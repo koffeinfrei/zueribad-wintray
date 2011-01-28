@@ -68,16 +68,20 @@ namespace Koffeinfrei.Zueribad
             IntPtr hIcon;
             using (Bitmap bitmap = new Bitmap(Width, Height))
             {
-                using (SolidBrush brush = new SolidBrush(FontColor))
+                using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    using (Graphics graphics = Graphics.FromImage(bitmap))
+                    using (SolidBrush backgroundBrush = new SolidBrush(BackgroundColor))
                     {
-                        graphics.FillRectangle(new SolidBrush(BackgroundColor), 0, 0, Width, Height);
-                        graphics.TextContrast = 0; // high contrast (0-12)
-                        graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                        graphics.FillRectangle(backgroundBrush, 0, 0, Width, Height);
+                    }
+                    graphics.TextContrast = 0; // high contrast (0-12)
+                    graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                    using (SolidBrush brush = new SolidBrush(FontColor))
+                    {
                         graphics.DrawString(temperature, Font, brush, Width/2, Height/2, stringFormat);
                     }
                 }
+
 
                 hIcon = bitmap.GetHicon();
             }

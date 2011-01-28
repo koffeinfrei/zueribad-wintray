@@ -5,5 +5,20 @@
     <Setting Name="DataFile" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://www.stadt-zuerich.ch/stzh/bathdatadownload</Value>
     </Setting>
+    <Setting Name="FavoriteBath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FontColor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-657931</Value>
+    </Setting>
+    <Setting Name="BackgroundColor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">16777215</Value>
+    </Setting>
+    <Setting Name="DataUpdateInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3600000</Value>
+    </Setting>
+    <Setting Name="Language" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

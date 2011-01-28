@@ -31,5 +31,65 @@ namespace Koffeinfrei.Zueribad {
                 return ((string)(this["DataFile"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FavoriteBath {
+            get {
+                return ((string)(this["FavoriteBath"]));
+            }
+            set {
+                this["FavoriteBath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-657931")]
+        public int FontColor {
+            get {
+                return ((int)(this["FontColor"]));
+            }
+            set {
+                this["FontColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("16777215")]
+        public int BackgroundColor {
+            get {
+                return ((int)(this["BackgroundColor"]));
+            }
+            set {
+                this["BackgroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3600000")]
+        public int DataUpdateInterval {
+            get {
+                return ((int)(this["DataUpdateInterval"]));
+            }
+            set {
+                this["DataUpdateInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Language {
+            get {
+                return ((int)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
+            }
+        }
     }
 }
