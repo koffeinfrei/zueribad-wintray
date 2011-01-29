@@ -14,15 +14,15 @@ PackageCodeGuid = UUIDTools::UUID.random_create.to_s.upcase
 ['version.txt', 
  'Koffeinfrei.Zueribad/Properties/AssemblyInfo.cs', 
  'Koffeinfrei.Zueribad.Setup/Koffeinfrei.Zueribad.Setup.vdproj'].each do |filename|
-	puts "> updating '#{filename}'..."
-	contents = File.read(filename)
-	File.open(filename, 'w') do |file|
-		file.puts contents
-					.gsub(/\d\.\d\.\d\.\d/, "#{version}")
-					.gsub(/("ProductVersion" = "8:)\d\.\d\.\d"/, "\\1#{version[/\d\.\d\.\d/]}\"")
-					.gsub(/("ProductCode" = "8:){[^}]+}"/, "\\1{#{ProductCodeGuid}}\"")
-					.gsub(/("PackageCode" = "8:){[^}]+}"/, "\\1{#{PackageCodeGuid}}\"")
-	end
+    puts "> updating '#{filename}'..."
+    contents = File.read(filename)
+    File.open(filename, 'w') do |file|
+        file.puts contents
+                    .gsub(/\d\.\d\.\d\.\d/, "#{version}")
+                    .gsub(/("ProductVersion" = "8:)\d\.\d\.\d"/, "\\1#{version[/\d\.\d\.\d/]}\"")
+                    .gsub(/("ProductCode" = "8:){[^}]+}"/, "\\1{#{ProductCodeGuid}}\"")
+                    .gsub(/("PackageCode" = "8:){[^}]+}"/, "\\1{#{PackageCodeGuid}}\"")
+    end
 end
 
 # done
