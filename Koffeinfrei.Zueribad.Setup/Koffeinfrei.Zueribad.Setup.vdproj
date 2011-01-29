@@ -55,6 +55,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -71,6 +79,27 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -195,25 +224,25 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Koffeinfrei.Zueribad.Setup"
-        "ProductCode" = "8:{43269A73-8135-4362-A64C-3F19FBD1E332}"
-        "PackageCode" = "8:{8852FB9A-FEA9-48CA-AC29-3BA6980CEC5B}"
+        "ProductName" = "8:Zueribad"
+        "ProductCode" = "8:{A48BC1E3-CB50-4813-A7C0-97132F826809}"
+        "PackageCode" = "8:{5CBA351F-11C3-41A5-A84E-DE4C8EC2C9B8}"
         "UpgradeCode" = "8:{433D1E81-BB29-407E-8075-945A4DF1E199}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Microsoft"
+        "ProductVersion" = "8:0.1.1"
+        "Manufacturer" = "8:Koffeinfrei"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Koffeinfrei.Zueribad.Setup"
+        "Title" = "8:Koffeinfrei Zueribad"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Microsoft"
+        "ARPCONTACT" = "8:Koffeinfrei"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPURLINFOABOUT" = "8:http://www.koffeinfrei.org"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -718,7 +747,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0C80331EBFBC42B199553949AB7244AD"
             {
-            "SourcePath" = "8:..\\Koffeinfrei.Zueribad\\obj\\Debug\\Koffeinfrei.Zueribad.exe"
+            "SourcePath" = "8:..\\Koffeinfrei.Zueribad\\obj\\Release\\Koffeinfrei.Zueribad.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_80D0460599D64D93A7EC1A8E4FA62C4C"
