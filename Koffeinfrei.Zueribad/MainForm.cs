@@ -299,8 +299,8 @@ namespace Koffeinfrei.Zueribad
             if (updater.HasNewerVersion())
             {
                 DialogResult result = MessageBox.Show(
-                    Resources.DialogVersionUpdate, 
-                    string.Format(Resources.DialogVersionUpdateQuestionFormat, updater.NewerVersion), 
+                    string.Format(Resources.DialogVersionUpdateQuestionFormat, updater.NewerVersion),
+                    Resources.DialogVersionUpdate,
                     MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)

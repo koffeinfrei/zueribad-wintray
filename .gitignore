@@ -1,6 +1,7 @@
 Thumbs.db
 *.obj
 *.exe
+*.msi
 *.pdb
 *.user
 *.suo
