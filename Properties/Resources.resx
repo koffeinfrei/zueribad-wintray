@@ -196,4 +196,10 @@
   <data name="LabelSettingsLanguage" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="DialogVersionUpdate" xml:space="preserve">
+    <value>Version update</value>
+  </data>
+  <data name="DialogVersionUpdateQuestionFormat" xml:space="preserve">
+    <value>The newer version {0} is available. Do you want to download it now?</value>
+  </data>
 </root>

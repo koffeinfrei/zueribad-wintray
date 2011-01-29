@@ -126,6 +126,12 @@
   <data name="ButtonSave" xml:space="preserve">
     <value>Speichern</value>
   </data>
+  <data name="DialogVersionUpdate" xml:space="preserve">
+    <value>Versions update</value>
+  </data>
+  <data name="DialogVersionUpdateQuestionFormat" xml:space="preserve">
+    <value>Die neuere Version {0} ist verfügbar. Wollen Sie diese jetzt herunterladen?</value>
+  </data>
   <data name="ErrorAlpha" xml:space="preserve">
     <value>Alpha-Wert muss zwischen 0.0 und 1.0 sein</value>
   </data>

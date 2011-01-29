@@ -65,20 +65,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Updater.cs" />
     <Compile Include="Model\Bath.cs" />
     <Compile Include="Core\CultureInfoExtensions.cs" />
     <Compile Include="Model\DataService.cs" />
-    <Compile Include="DockableForm.cs">
+    <Compile Include="UI\DockableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\GlobalErrorProvider.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GradientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GradientForm.Designer.cs">
-      <DependentUpon>GradientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -90,9 +85,6 @@
     <Compile Include="Core\IntegerExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GradientForm.resx">
-      <DependentUpon>GradientForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -43,6 +43,7 @@
             this.linkHomepage = new System.Windows.Forms.Label();
             this.dataWorker = new System.ComponentModel.BackgroundWorker();
             this.dataUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.versionUpdateWorker = new System.ComponentModel.BackgroundWorker();
             this.trayMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHeader)).BeginInit();
             this.SuspendLayout();
@@ -197,6 +198,11 @@
             this.dataUpdateTimer.Interval = global::Koffeinfrei.Zueribad.Properties.Settings.Default.DataUpdateInterval;
             this.dataUpdateTimer.Tick += new System.EventHandler(this.dataUpdateTimer_Tick);
             // 
+            // versionUpdateWorker
+            // 
+            this.versionUpdateWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.versionUpdateWorker_DoWork);
+            this.versionUpdateWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.versionUpdateWorker_RunWorkerCompleted);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +249,7 @@
         private System.ComponentModel.BackgroundWorker dataWorker;
         private System.Windows.Forms.Timer dataUpdateTimer;
         private System.Windows.Forms.ToolStripMenuItem menuItemSettings;
+        private System.ComponentModel.BackgroundWorker versionUpdateWorker;
     }
 }
 

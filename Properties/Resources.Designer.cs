@@ -108,6 +108,24 @@ namespace Koffeinfrei.Zueribad.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Version update.
+        /// </summary>
+        internal static string DialogVersionUpdate {
+            get {
+                return ResourceManager.GetString("DialogVersionUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The newer version {0} is available. Do you want to download it now?.
+        /// </summary>
+        internal static string DialogVersionUpdateQuestionFormat {
+            get {
+                return ResourceManager.GetString("DialogVersionUpdateQuestionFormat", resourceCulture);
+            }
+        }
+        
         internal static System.Drawing.Icon error {
             get {
                 object obj = ResourceManager.GetObject("error", resourceCulture);

@@ -22,6 +22,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using Koffeinfrei.Zueribad.Core;
 using Koffeinfrei.Zueribad.Model;
 using Koffeinfrei.Zueribad.Properties;
 using Koffeinfrei.Zueribad.UI;
@@ -77,6 +78,8 @@ namespace Koffeinfrei.Zueribad
         /// <param name = "e">The <see cref = "System.EventArgs" /> instance containing the event data.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            versionUpdateWorker.RunWorkerAsync();
+
             UpdateBathData();
 
             SetWindowPosition();
@@ -282,5 +285,30 @@ namespace Koffeinfrei.Zueribad
                 UpdateCurrentBath();
             }
         }
+
+        private void versionUpdateWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Updater updater = new Updater();
+            updater.HasNewerVersion();
+            e.Result = updater;
+        }
+
+        private void versionUpdateWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Updater updater = (Updater) e.Result;
+            if (updater.HasNewerVersion())
+            {
+                DialogResult result = MessageBox.Show(
+                    Resources.DialogVersionUpdate, 
+                    string.Format(Resources.DialogVersionUpdateQuestionFormat, updater.NewerVersion), 
+                    MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    updater.Update();
+                }
+            }
+        }
+
     }
 }

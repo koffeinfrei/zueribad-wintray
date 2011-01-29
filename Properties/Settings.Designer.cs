@@ -91,5 +91,23 @@ namespace Koffeinfrei.Zueribad.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/koffeinfrei/zueribad-wintray/raw/master/version.txt")]
+        public string VersionUrl {
+            get {
+                return ((string)(this["VersionUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/downloads/koffeinfrei/zueribad-wintray/zueribad_setup_{0}.exe")]
+        public string DownloadUrlFormat {
+            get {
+                return ((string)(this["DownloadUrlFormat"]));
+            }
+        }
     }
 }
