@@ -175,6 +175,15 @@ namespace Koffeinfrei.Zueribad.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check for updates on startup.
+        /// </summary>
+        internal static string LabelCheckUpdates {
+            get {
+                return ResourceManager.GetString("LabelCheckUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to min..
         /// </summary>
         internal static string LabelMinutesAbbreviation {
@@ -234,6 +243,15 @@ namespace Koffeinfrei.Zueribad.Properties {
         internal static string LabelSettingsUpdateInterval {
             get {
                 return ResourceManager.GetString("LabelSettingsUpdateInterval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updates.
+        /// </summary>
+        internal static string LabelUpdates {
+            get {
+                return ResourceManager.GetString("LabelUpdates", resourceCulture);
             }
         }
         

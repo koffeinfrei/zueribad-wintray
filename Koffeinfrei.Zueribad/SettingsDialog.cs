@@ -135,6 +135,7 @@ namespace Koffeinfrei.Zueribad
                 Settings.Default.FavoriteBath = comboFavoriteBath.SelectedItem.ToString();
                 Settings.Default.Language =
                     availableCultures.Where(x => x.NativeName == comboLanguages.SelectedItem.ToString()).Single().LCID;
+                Settings.Default.CheckForUpdates = checkBoxUpdateCheck.Checked;
 
                 Settings.Default.Save();
 
@@ -151,6 +152,7 @@ namespace Koffeinfrei.Zueribad
             string favoriteBath = Settings.Default.FavoriteBath;
             int fontColorTmp = Settings.Default.FontColor;
             int backolorTmp = Settings.Default.BackgroundColor;
+            bool checkForUpdates = Settings.Default.CheckForUpdates;
 
             Settings.Default.Reset();
             LoadSettings();
@@ -161,6 +163,7 @@ namespace Koffeinfrei.Zueribad
             Settings.Default.FavoriteBath = favoriteBath;
             Settings.Default.FontColor = fontColorTmp;
             Settings.Default.BackgroundColor = backolorTmp;
+            Settings.Default.CheckForUpdates = checkForUpdates;
             Settings.Default.Save();
         }
 
@@ -228,6 +231,8 @@ namespace Koffeinfrei.Zueribad
             labelUpdateInterval.Text = Resources.LabelSettingsUpdateInterval;
             labelLanguage.Text = Resources.LabelSettingsLanguage;
             labelFavoriteBath.Text = Resources.LabelSettingsFavoriteBath;
+            labelUpdateCheck.Text = Resources.LabelUpdates;
+            checkBoxUpdateCheck.Text = Resources.LabelCheckUpdates;
 
             buttonSave.Text = Resources.ButtonSave;
             buttonCancel.Text = Resources.ButtonCancel;
@@ -259,6 +264,8 @@ namespace Koffeinfrei.Zueribad
             {
                 comboFavoriteBath.SelectedIndex = 0;
             }
+
+            checkBoxUpdateCheck.Checked = Settings.Default.CheckForUpdates;
 
             fontColor = Color.FromArgb(Settings.Default.FontColor);
             backColor = Color.FromArgb(Settings.Default.BackgroundColor);

@@ -55,6 +55,8 @@
             this.buttonReset = new System.Windows.Forms.Button();
             this.labelLanguage = new System.Windows.Forms.Label();
             this.comboLanguages = new System.Windows.Forms.ComboBox();
+            this.labelUpdateCheck = new System.Windows.Forms.Label();
+            this.checkBoxUpdateCheck = new System.Windows.Forms.CheckBox();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -71,7 +73,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.74559F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.25441F));
             this.tableLayoutPanel1.Controls.Add(this.labelFontColor, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelBackColor, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 1);
@@ -79,14 +81,17 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelFavoriteBath, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboFavoriteBath, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.buttonReset, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.buttonReset, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelLanguage, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboLanguages, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.labelUpdateCheck, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxUpdateCheck, 1, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -116,11 +121,11 @@
             this.tableLayoutPanel2.Controls.Add(this.buttonSave, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonCancel, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(294, 263);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(294, 313);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(167, 154);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(167, 104);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // buttonSave
@@ -387,7 +392,7 @@
             // buttonReset
             // 
             this.buttonReset.AutoSize = true;
-            this.buttonReset.Location = new System.Drawing.Point(13, 263);
+            this.buttonReset.Location = new System.Drawing.Point(13, 313);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(75, 23);
             this.buttonReset.TabIndex = 10;
@@ -413,13 +418,34 @@
             this.comboLanguages.Size = new System.Drawing.Size(261, 21);
             this.comboLanguages.TabIndex = 12;
             // 
+            // labelUpdateCheck
+            // 
+            this.labelUpdateCheck.AutoSize = true;
+            this.labelUpdateCheck.Location = new System.Drawing.Point(13, 260);
+            this.labelUpdateCheck.Name = "labelUpdateCheck";
+            this.labelUpdateCheck.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.labelUpdateCheck.Size = new System.Drawing.Size(35, 20);
+            this.labelUpdateCheck.TabIndex = 13;
+            this.labelUpdateCheck.Text = "label3";
+            // 
+            // checkBoxUpdateCheck
+            // 
+            this.checkBoxUpdateCheck.AutoSize = true;
+            this.checkBoxUpdateCheck.Location = new System.Drawing.Point(161, 263);
+            this.checkBoxUpdateCheck.Name = "checkBoxUpdateCheck";
+            this.checkBoxUpdateCheck.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.checkBoxUpdateCheck.Size = new System.Drawing.Size(80, 19);
+            this.checkBoxUpdateCheck.TabIndex = 14;
+            this.checkBoxUpdateCheck.Text = "checkBox1";
+            this.checkBoxUpdateCheck.UseVisualStyleBackColor = true;
+            // 
             // SettingsDialog
             // 
             this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(479, 301);
+            this.ClientSize = new System.Drawing.Size(479, 347);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SettingsDialog";
             this.Text = "SettingsDialog";
@@ -470,5 +496,7 @@
         private System.Windows.Forms.MaskedTextBox textBackColorAlpha;
         private System.Windows.Forms.Label labelLanguage;
         private System.Windows.Forms.ComboBox comboLanguages;
+        private System.Windows.Forms.Label labelUpdateCheck;
+        private System.Windows.Forms.CheckBox checkBoxUpdateCheck;
     }
 }

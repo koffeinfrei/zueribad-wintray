@@ -141,6 +141,9 @@
   <data name="ErrorNumber" xml:space="preserve">
     <value>Wert muss eine gültige Zahl sein</value>
   </data>
+  <data name="LabelCheckUpdates" xml:space="preserve">
+    <value>Beim Programmstart auf Updates überprüfen</value>
+  </data>
   <data name="LabelMinutesAbbreviation" xml:space="preserve">
     <value>min.</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="LabelSettingsUpdateInterval" xml:space="preserve">
     <value>Aktualisierungsintervall</value>
+  </data>
+  <data name="LabelUpdates" xml:space="preserve">
+    <value>Updates</value>
   </data>
   <data name="LabelWaterTemperatur" xml:space="preserve">
     <value>Wassertemperatur</value>

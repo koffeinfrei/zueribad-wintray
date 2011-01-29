@@ -78,7 +78,10 @@ namespace Koffeinfrei.Zueribad
         /// <param name = "e">The <see cref = "System.EventArgs" /> instance containing the event data.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            versionUpdateWorker.RunWorkerAsync();
+            if (Settings.Default.CheckForUpdates)
+            {
+                versionUpdateWorker.RunWorkerAsync();
+            }
 
             UpdateBathData();
 
