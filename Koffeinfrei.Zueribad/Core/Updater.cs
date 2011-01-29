@@ -14,13 +14,9 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Koffeinfrei.Zueribad.Properties;
 
@@ -36,12 +32,13 @@ namespace Koffeinfrei.Zueribad.Core
         {
             if (!hasNewerVersion.HasValue)
             {
-
-                string serverVersion = new WebClient().DownloadString(Settings.Default.VersionUrl);
+                string serverVersion = new WebClient().DownloadString(Settings.Default.VersionUrl).Trim();
 
                 if (Application.ProductVersion != serverVersion)
                 {
-                    NewerVersion = serverVersion;
+                    // strip last .0
+                    NewerVersion = Regex.Replace(serverVersion, @"(\d+\.\d+\.\d+)\.\d+", @"$1");
+                    ;
                     hasNewerVersion = true;
                 }
                 else
