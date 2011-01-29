@@ -6,6 +6,8 @@ This tool displays the current water temperature of a selected bath in zurich in
 
 The data is taken from [Schul- und Sportdepartement, Stadt Zürich](http://www.stadt-zuerich.ch/ssd/de/index/sport/schwimmen.html).
 
+![Main Window](http://www.koffeinfrei.org/uploads/images/projects/zueribad-wintray-screen.png "Main Window")
+
 ## License
 GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007 

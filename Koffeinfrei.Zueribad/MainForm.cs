@@ -59,13 +59,18 @@ namespace Koffeinfrei.Zueribad
             {
                 Resources.Culture = new CultureInfo(Settings.Default.Language);
             }
+
+            dataUpdateTimer.Interval = Settings.Default.DataUpdateInterval;
         }
 
-        private void LoadBathSettings()
+        private void LoadBathSettings(bool firstTime)
         {
             if (baths != null && baths.Count > 0)
             {
-                currentBathIndex = Math.Max(0, baths.FindIndex(x => x.Title == Settings.Default.FavoriteBath));
+                if (firstTime)
+                {
+                    currentBathIndex = Math.Max(0, baths.FindIndex(x => x.Title == Settings.Default.FavoriteBath));
+                }
 
                 UpdateCurrentBath();
             }
@@ -83,7 +88,7 @@ namespace Koffeinfrei.Zueribad
                 versionUpdateWorker.RunWorkerAsync();
             }
 
-            UpdateBathData();
+            UpdateBathData(true);
 
             SetWindowPosition();
             WindowState = FormWindowState.Minimized;
@@ -175,30 +180,31 @@ namespace Koffeinfrei.Zueribad
 
         private void dataWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            e.Result = e.Argument;
             baths = dataService.Load();
         }
 
         private void dataWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            bool firstTime = (bool) e.Result;
             PopulateBaths();
-            LoadBathSettings();
-            //UpdateCurrentBath();
+            LoadBathSettings(firstTime);
         }
 
         private void dataUpdateTimer_Tick(object sender, EventArgs e)
         {
-            UpdateBathData();
+            UpdateBathData(false);
         }
 
         /// <summary>
         ///   Updates the bath data, fetches the data from the web service asynchronously.
         /// </summary>
-        private void UpdateBathData()
+        private void UpdateBathData(bool firstTime)
         {
             if (!dataWorker.IsBusy)
             {
                 trayIcon.SetAnimated(Resources.loading2, Resources.loading1);
-                dataWorker.RunWorkerAsync();
+                dataWorker.RunWorkerAsync(firstTime);
             }
         }
 
@@ -207,6 +213,8 @@ namespace Koffeinfrei.Zueribad
         /// </summary>
         private void PopulateBaths()
         {
+            menuItemBaths.DropDownItems.Clear();
+            
             foreach (Bath bath in baths)
             {
                 ToolStripMenuItem item = new ToolStripMenuItem
@@ -218,6 +226,8 @@ namespace Koffeinfrei.Zueribad
 
                 menuItemBaths.DropDownItems.Add(item);
             }
+
+            ((ToolStripMenuItem)menuItemBaths.DropDownItems[currentBathIndex]).Checked = true;
         }
 
         /// <summary>
