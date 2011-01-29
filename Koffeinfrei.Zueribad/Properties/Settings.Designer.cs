@@ -103,7 +103,7 @@ namespace Koffeinfrei.Zueribad.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/downloads/koffeinfrei/zueribad-wintray/zueribad_setup_{0}.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/downloads/koffeinfrei/zueribad-wintray/zueribad_setup_{0}.msi")]
         public string DownloadUrlFormat {
             get {
                 return ((string)(this["DownloadUrlFormat"]));
