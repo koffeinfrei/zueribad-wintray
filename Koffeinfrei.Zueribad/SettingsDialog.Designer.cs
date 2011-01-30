@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsDialog));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelFontColor = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -447,6 +448,7 @@
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(479, 347);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsDialog";
             this.Text = "SettingsDialog";
             this.Load += new System.EventHandler(this.SettingsDialog_Load);
